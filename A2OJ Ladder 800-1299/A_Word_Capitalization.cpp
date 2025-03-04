@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -22,32 +23,9 @@ const int MOD = 1e9 + 7;
 
 void solve() {
     string s;
-    string ans = "";
     cin >> s;
-
-    int n = sz(s);
-    int small = 0, big = 0;
-    for(int i = 0; i < n; i++){
-        if(islower(s[i])) small++;
-        else big++;
-    }
-
-    if(big <= small){
-        for(int i = 0; i < n; i++){
-            if(islower(s[i])) ans += (char)s[i];
-            else ans += (char)s[i]-'A'+'a';
-        }
-    }
-
-    else if(big > small){
-        for(int i = 0; i < n; i++){
-            if(islower(s[i])) ans += (char)s[i]-'a'+'A';
-            else ans += (char)s[i];
-        }
-    }
-
-    cout << ans;
-
+    if(islower(s[0])) s[0] = toupper(s[0]);
+    cout << s;
 }
 
 int main() {

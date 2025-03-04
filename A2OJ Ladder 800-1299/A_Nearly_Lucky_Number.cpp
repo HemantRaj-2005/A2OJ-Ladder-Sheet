@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -21,33 +22,17 @@ const ll LINF = 1e18;
 const int MOD = 1e9 + 7;
 
 void solve() {
-    string s;
-    string ans = "";
-    cin >> s;
+    ll num;
+    cin >> num;
 
-    int n = sz(s);
-    int small = 0, big = 0;
-    for(int i = 0; i < n; i++){
-        if(islower(s[i])) small++;
-        else big++;
+    int cnt = 0;
+    while(num > 0){
+        if(num % 10 == 4 || num % 10 == 7) cnt++;
+        num /= 10;
     }
 
-    if(big <= small){
-        for(int i = 0; i < n; i++){
-            if(islower(s[i])) ans += (char)s[i];
-            else ans += (char)s[i]-'A'+'a';
-        }
-    }
-
-    else if(big > small){
-        for(int i = 0; i < n; i++){
-            if(islower(s[i])) ans += (char)s[i]-'a'+'A';
-            else ans += (char)s[i];
-        }
-    }
-
-    cout << ans;
-
+    if(cnt == 4 || cnt == 7) cout << "YES";
+    else cout << "NO";
 }
 
 int main() {
