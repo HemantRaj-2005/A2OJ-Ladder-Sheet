@@ -29,7 +29,6 @@ void solve() {
     for(int i = 1; i < num; i++){
         if(s[i] == s[i - 1]) cnt++;
     }
-
     cout << cnt;
 }
 
